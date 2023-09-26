@@ -1,8 +1,8 @@
-You should also include a README.md in the repo with your scripts...
+### You should also include a README.md in the repo with your scripts...
 
 
 
-##### Step 1: Merges the training and the test sets to create one data set.
+#### Step 1: Merges the training and the test sets to create one data set.
 
     traindata <- read.table("UCI HAR Dataset/train/X_train.txt")
     testdata  <- read.table("UCI HAR Dataset/test/X_test.txt")
@@ -19,7 +19,7 @@ Verifying the initial and resulting data sets:
   
  
   
-##### Step 2: Extracts only the measurements on the mean and standard deviation for each measurement. 
+#### Step 2: Extracts only the measurements on the mean and standard deviation for each measurement. 
 Load the file with the variable names 
 
     features <- read.table("UCI HAR Dataset/features.txt")
@@ -41,7 +41,7 @@ Producing a new data set with only selected columns:
     dim(merge_mean_std)
     [1] 10299    66
 
-##### Step 3: Uses descriptive activity names to name the activities in the data set
+#### Step 3: Uses descriptive activity names to name the activities in the data set
   
     trainactivity  <- read.table("UCI HAR Dataset/train/y_train.txt")
     
@@ -49,11 +49,11 @@ Producing a new data set with only selected columns:
     
     merge_activity <- rbind(trainactivity, testactivity)
   
-    dim(trainactivity)  #
+    dim(trainactivity)
     [1] 7352    1
-    dim(testactivity)   #
+    dim(testactivity)
     [1] 2947    1
-    dim(merge_activity) #
+    dim(merge_activity)
     [1] 10299   1
   
   
@@ -64,7 +64,7 @@ Create a vector of descriptive actitivies for the 10299 rows
 
     descrpt_activ <- activities[merge_activity$V1, 2]
 
-#####Step 4: Appropriately labels the data set with descriptive variable names. 
+#### Step 4: Appropriately labels the data set with descriptive variable names. 
   
     features$V2 <- gsub("-", "",features$V2 )
     features$V2 <- gsub("\\()", "",features$V2 )
@@ -73,7 +73,7 @@ Create a vector of descriptive actitivies for the 10299 rows
     names(merge_mean_std) <- features[retained,2]
   
   
-##### Load the subject_IDs and create the final data set
+#### Load the subject_IDs and create the final data set
 
     trainsubject <- read.table("UCI HAR Dataset/train/subject_train.txt")
     
@@ -86,7 +86,7 @@ Create a vector of descriptive actitivies for the 10299 rows
     final_dataset <- cbind(mergesubject, descrpt_activ, merge_mean_std)
   
 
-##### Step 5: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+#### Step 5: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
   
     library(reshape2)
   
