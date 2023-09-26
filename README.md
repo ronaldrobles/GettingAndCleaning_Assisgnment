@@ -30,21 +30,18 @@ Load the file with the variable names
 Obtain column positions only for variables containing mean() and std() in its names.
 
     retained <- grep("mean\\(|std\\(", features$V2)
-  
     length(retained)
     [1] 66
   
 Producing a new data set with only selected columns:
 
     merge_mean_std  <- mergedata[,retained]
-  
     dim(merge_mean_std)
     [1] 10299    66
 
 ### Step 3: Uses descriptive activity names to name the activities in the data set
   
     trainactivity  <- read.table("UCI HAR Dataset/train/y_train.txt")
-    
     testactivity   <- read.table("UCI HAR Dataset/test/y_test.txt")
     
     merge_activity <- rbind(trainactivity, testactivity)
@@ -76,27 +73,19 @@ Create a vector of descriptive actitivies for the 10299 rows
 ### Load the subject_IDs and create the final data set
 
     trainsubject <- read.table("UCI HAR Dataset/train/subject_train.txt")
-    
     testsubject <- read.table("UCI HAR Dataset/test/subject_test.txt")
     
     mergesubject <- rbind(trainsubject, testsubject)
-  
     names(mergesubject) <- "subjects"
   
     final_dataset <- cbind(mergesubject, descrpt_activ, merge_mean_std)
   
-
 ### Step 5: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
   
     library(reshape2)
   
     meltdfrm <- reshape2::melt(final_dataset, id=c("subjects", "descrpt_activ"))
-  
-    meltdfrm[1:10,1:4]
-  
     tidy_dataset <- reshape2::dcast(meltdfrm, subjects + descrpt_activ ~ variable, fun.aggregate = mean)
-  
-    tidy_dataset[1:10,1:6]
   
     write.table(tidy_dataset, "tidy.txt", row.names = FALSE, quote = FALSE)
   
