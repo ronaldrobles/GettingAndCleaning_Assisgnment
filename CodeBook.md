@@ -53,11 +53,11 @@ The information from Subjects and Activities where loaded from "Training" and "T
 
 and combined to the dataset. To avoid errors the variable names where modified by removing unnecesary characters
 
-     	-- removed "()" and "-" characters.
+* removed "()" and "-" characters.
 
 The activity information were also modified replacing number codes by their corresponding activity names:
 
-     	-- LAYING, SITTING , STANDING , WALKING , WALKING_DOWNSTAIRS  and WALKING_UPSTAIRS .
+* LAYING, SITTING , STANDING , WALKING , WALKING_DOWNSTAIRS  and WALKING_UPSTAIRS .
   
 -------------------------------------------------------------------------------------------------------------
  
@@ -67,8 +67,9 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 Once the extracted folder "UCI HAR Dataset" is inthe main directory, run the already included script with:
 
-  	> source("run_analysis.R")
-  	> getresult() 
+  	source("run_analysis.R")
+   
+  	getresult() 
 
 The script does the following:
 
