@@ -69,11 +69,7 @@ Once the extracted folder "UCI HAR Dataset" is inthe main directory, run the alr
   > getresult() 
 
 The script does the following:
- 	 - 'README.txt': describes about the general information and background related to the data sets within the zip file.
-	
- 	 - 'features_info.txt': Shows information about the variables used on the feature vector.
 
-   	 - 'features.txt': List of all features.
   	- Step 1: Merges the training and the test sets to create one data set.
    
    	- Step 2: Extracts only the measurements on the mean and standard deviation for each measurement.
