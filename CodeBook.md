@@ -43,18 +43,20 @@ wearing a smartphone (Samsung Galaxy S II) on the waist.
 ### Cleaning data
 The information from Subjects and Activities where loaded from "Training" and "Test" directories
 
->"UCI HAR Dataset/train/subject_train.txt"
->
->"UCI HAR Dataset/test/subject_test.txt"
->
->"UCI HAR Dataset/train/y_train.txt"
->
->"UCI HAR Dataset/test/y_test.txt"
+	>"UCI HAR Dataset/train/subject_train.txt"
+	>
+	>"UCI HAR Dataset/test/subject_test.txt"
+	>
+	>"UCI HAR Dataset/train/y_train.txt"
+	>
+	>"UCI HAR Dataset/test/y_test.txt"
 
 and combined to the dataset. To avoid errors the variable names where modified by removing unnecesary characters
+
      	-- removed "()" and "-" characters.
 
-The activity information were also modified replacing number codes by their corresponding activity names: 
+The activity information were also modified replacing number codes by their corresponding activity names:
+
      	-- LAYING, SITTING , STANDING , WALKING , WALKING_DOWNSTAIRS  and WALKING_UPSTAIRS .
   
 -------------------------------------------------------------------------------------------------------------
