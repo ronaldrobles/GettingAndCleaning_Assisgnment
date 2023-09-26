@@ -44,16 +44,18 @@ wearing a smartphone (Samsung Galaxy S II) on the waist.
 The information from Subjects and Activities where loaded from "Training" and "Test" directories
 
 >"UCI HAR Dataset/train/subject_train.txt"
+>
 >"UCI HAR Dataset/test/subject_test.txt"
-
+>
 >"UCI HAR Dataset/train/y_train.txt"
+>
 >"UCI HAR Dataset/test/y_test.txt"
 
 and combined to the dataset. To avoid errors the variable names where modified by removing unnecesary characters
-     -- removed "()" and "-" characters.
+     	-- removed "()" and "-" characters.
 
 The activity information were also modified replacing number codes by their corresponding activity names: 
-     -- LAYING, SITTING , STANDING , WALKING , WALKING_DOWNSTAIRS  and WALKING_UPSTAIRS .
+     	-- LAYING, SITTING , STANDING , WALKING , WALKING_DOWNSTAIRS  and WALKING_UPSTAIRS .
   
 -------------------------------------------------------------------------------------------------------------
  
@@ -67,10 +69,15 @@ Once the extracted folder "UCI HAR Dataset" is inthe main directory, run the alr
   > getresult() 
 
 The script does the following:
+
   	- Step 1: Merges the training and the test sets to create one data set.
+   
    	- Step 2: Extracts only the measurements on the mean and standard deviation for each measurement.
+    
     	- Step 3: Uses descriptive activity names to name the activities in the data set.
+     
      	- Step 4: Appropriately labels the data set with descriptive variable names.
+      
       	- Step 5: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 =============================================================================================================
